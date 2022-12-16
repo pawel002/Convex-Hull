@@ -105,6 +105,7 @@ def plotHull(points, hull):
        hull musi byc podane zgodnie lub przeciwnie do wskazówek zegara aby wygenerewać spójny wykres.'''
     
     closedHull = copy.deepcopy(hull)
+    closedHull.append(closedHull[0])
 
     for point in points:
         plt.scatter([point[0]], [point[1]], color="blue")
