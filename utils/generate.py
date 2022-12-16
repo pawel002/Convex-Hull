@@ -1,4 +1,4 @@
-from random import random
+from random import random, randint
 from math import cos, sin, pi
 
 def lerp(a, b, t):
@@ -8,16 +8,16 @@ def genUniformRectangle(xStart, xEnd, yStart, yEnd, count):
     '''Generuje count punktów z prostokąta: xStart < x < xEnd i yStart < y < yEnd'''
     return [[lerp(xStart, xEnd, random()), lerp(yStart, yEnd, random())] for _  in range(count)]
 
-def genUniformRectangle(x, y, radius, count):
+def genUniformCirle(x, y, radius, count):
     '''Generuje count punktów na okregu o środku w (x,y) i promieniu radius'''
-    return [[x + radius*cos(angle), y + radius*cos(angle)] for angle in [2*pi*random() for _  in range(count)]]
+    return [[x + radius*cos(angle), y + radius*sin(angle)] for angle in [2*pi*random() for _  in range(count)]]
 
 def genUniformOnRectangle(lowerLeft, upperRight, count):
     '''Generuje count punktów na prostokącie o lewym dolnym punkcie w lowerLeft i prawym gowrnym upperRight.'''
     ll, ur, arr = lowerLeft, upperRight, [[] for _ in range(count)]
     for i in range(count):
-        s = random.randint(0, 3)
-        t = random.random()
+        s = randint(0, 3)
+        t = random()
 
         # dolna krawędz
         if s == 0:
@@ -43,17 +43,17 @@ def genUniformOnSquare(side, sideCount, diagonalCount):
     arr = [[] for _ in range(2*(sideCount + diagonalCount))]
 
     for i in range(sideCount):
-        arr[i] = [random.random()*side, 0]
+        arr[i] = [random()*side, 0]
     
     for i in range(sideCount):
-        arr[i + sideCount] = [0, random.random()*side]
+        arr[i + sideCount] = [0, random()*side]
     
     for i in range(diagonalCount):
-        x = random.random() * side
+        x = random() * side
         arr[i + 2*sideCount] = [x, x]
 
     for i in range(diagonalCount):
-        x = random.random() * side
+        x = random() * side
         arr[i + 2*sideCount + diagonalCount] = [x, side - x]
     
     arr.append([0, 0])
