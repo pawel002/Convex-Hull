@@ -9,7 +9,7 @@ def orient(a, b, c):
     d = det(a, b, c)
     if d > eps:
         return 1
-    elif d < eps:
+    elif d < -eps:
         return -1
     return 0
     

@@ -109,6 +109,9 @@ def plotHull(points, hull):
 
     for point in points:
         plt.scatter([point[0]], [point[1]], color="blue")
+    
+    for i, point in enumerate(hull):
+        plt.text(point[0], point[1], str(i))
 
     plt.plot(*(zip(*closedHull)), "ro-", zorder = 3)
     
