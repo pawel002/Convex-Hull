@@ -22,7 +22,7 @@ def benchmark(hullAlgorithm, timeOfBenchamrk, generator, *args):
         cumTime += benchEnd - benchStart
         count += 1
     
-    print("TESTS FINISHED" + 20*"-")
+    print("TESTS FINISHED. " + 20*"-")
     print("Executed", count, "tests.")
     print("Average time per test:", cumTime / count)
 

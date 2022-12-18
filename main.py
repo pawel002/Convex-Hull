@@ -13,12 +13,15 @@ import copy
 import time
 
 
-points = genUniformRectangle(-10, 10, -20, 30, 100)
-# points = genUniformCirle(10, 10, 10, 10)
+points = genUniformRectangle(-10, 10, -20, 30, 20)
+# points = genUniformCirle(10, 10, 10, 100)
 # points = genUniformOnRectangle([-10, -10], [20, 30], 100)
 # points = genUniformOnSquare(10, 20, 20)
 
-plot = Plot(quickhullVis(points))
-plot.draw()
+# hull = upperlower(points)
+# plotHull(points, hull)
 
-# benchmark(quickhull, 2, genUniformCirle, 10, 10, 10, 1000)
+# plot = Plot(upperlowerVis(points))
+# plot.draw()
+
+benchmark(upperlower, 2, genUniformCirle, 10, 10, 10, 10000)

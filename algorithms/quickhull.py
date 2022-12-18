@@ -1,5 +1,4 @@
 from algorithms.helpers import *
-
 from utils.viz import *
 
 def quickHullRecursive(p1, p2, points):
