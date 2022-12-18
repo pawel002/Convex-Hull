@@ -1,9 +1,10 @@
 from algorithms.helpers import *
+from utils.viz import *
 
 from functools import reduce
 
 def min_angle(a, b, c):
-    # możemy użyc porownania liczb zaa pomocą == ponieważ sprawdzamy czy a = b lub a = c
+
     if a[0] == b[0] and a[1] == b[1]:
         return c
     if a[0] == c[0] and a[1] == c[1]:
@@ -18,8 +19,7 @@ def min_angle(a, b, c):
 
     if lengthSquared(a, b) >= lengthSquared(a, c):
         return b
-    else:
-        return c
+    return c
 
 def jarvis(points):
     '''JARVIS'''
@@ -38,4 +38,26 @@ def jarvis(points):
             
 
 def jarvisVis(points):
-    pass
+    '''JARVIS VISUALIZATION'''
+
+    start = min(points, key=lambda x: [x[1], x[0]])
+    hull = [start]
+    scenes = []
+    
+    while True:
+        scenes.append(Scene([PointsCollection(points, "blue"),
+                             PointsCollection(hull, 'red', marker = "o")],
+                            [LinesCollection([[hull[i], hull[i+1]] for i in range(len(hull)-1)], 'red')]))
+        
+        point = reduce(lambda a, b: min_angle(start, a, b), points)
+        start = point
+        if hull[0] == point:
+            break
+        hull.append(point)
+    
+    hull.append(hull[0])
+    scenes.append(Scene([PointsCollection(points, "blue"),
+                     PointsCollection(hull, 'red', marker = "o")],
+                    [LinesCollection([[hull[i], hull[i+1]] for i in range(len(hull)-1)], 'red')]))
+    
+    return scenes

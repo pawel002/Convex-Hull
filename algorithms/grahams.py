@@ -1,4 +1,5 @@
 from algorithms.helpers import *
+from utils.viz import *
 
 from functools import cmp_to_key
 
@@ -11,12 +12,13 @@ def grahamsCmp(a, b, c):
     return -1
 
 def grahams(points):
+    '''GRAHAMS'''
 
-    points.sort(key=lambda x:[x[1], x[0]])
+    startpPoint = min(points, key=lambda x: (x[1], x[0]))
 
-    start = points.pop(0)
+    start = points.pop(points.index(startpPoint))
 
-    points.sort(key= cmp_to_key(lambda x, y : grahamsCmp(start, y, x)))
+    points.sort(key=cmp_to_key(lambda x, y : grahamsCmp(start, y, x)))
 
     hull = [start] + points[:2]
 
@@ -39,3 +41,38 @@ def grahams(points):
         hull.pop(-1)
 
     return hull
+
+
+def grahamsVis(points):
+    '''GRAHAMS VISUALIZATION'''
+
+    scenes = []
+
+    startpPoint = min(points, key=lambda x: (x[1], x[0]))
+
+    start = points.pop(points.index(startpPoint))
+
+    points.sort(key= cmp_to_key(lambda x, y : grahamsCmp(start, y, x)))
+
+    hull = [start] + points[:2]
+
+    i = 2
+    while i < len(points):            
+        if orient(hull[-2], hull[-1], points[i]) == 0:
+            hull.pop()
+            hull.append(points[i])
+            i = i + 1    
+        elif orient(hull[-2], hull[-1], points[i]) == 1:
+            hull.append(points[i])
+            i = i + 1
+        else:
+            hull.pop()
+        
+        scenes.append(Scene([PointsCollection(points, "blue"), PointsCollection(hull, 'red', marker = "o")], [LinesCollection([[hull[i], hull[i+1]] for i in range(len(hull)-1)], 'red')])) 
+
+    if orient(hull[-2], hull[-1], hull[0]) == 0:
+        hull.pop()
+    
+    scenes.append(Scene([PointsCollection(points, "blue"), PointsCollection(hull, 'red', marker = "o")], [LinesCollection([[hull[i], hull[i+1]] for i in range(len(hull)-1)], 'red')])) 
+
+    return scenes

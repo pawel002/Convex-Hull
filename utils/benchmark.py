@@ -10,7 +10,7 @@ def benchmark(hullAlgorithm, timeOfBenchamrk, generator, *args):
     count = 0
     while True:
 
-        if time() - startTime() > timeOfBenchamrk:
+        if time() - startTime > timeOfBenchamrk:
             break
         
         points = generator(*args)
