@@ -45,9 +45,9 @@ def jarvisVis(points):
     scenes = []
     
     while True:
-        scenes.append(Scene([PointsCollection(points, "blue"),
-                             PointsCollection(hull, 'red', marker = "o")],
-                            [LinesCollection([[hull[i], hull[i+1]] for i in range(len(hull)-1)], 'red')]))
+        scenes.append(Scene([PointsCollection(points, color="blue"),
+                             PointsCollection([point for point in hull], color='red', marker = "o")],
+                            [LinesCollection([[hull[i], hull[i+1]] for i in range(len(hull)-1)], color='red')]))
         
         point = reduce(lambda a, b: min_angle(start, a, b), points)
         start = point
@@ -56,8 +56,8 @@ def jarvisVis(points):
         hull.append(point)
     
     hull.append(hull[0])
-    scenes.append(Scene([PointsCollection(points, "blue"),
-                     PointsCollection(hull, 'red', marker = "o")],
-                    [LinesCollection([[hull[i], hull[i+1]] for i in range(len(hull)-1)], 'red')]))
+    scenes.append(Scene([PointsCollection(points, color="blue"),
+                     PointsCollection([point for point in hull], color='red', marker = "o")],
+                    [LinesCollection([[hull[i], hull[i+1]] for i in range(len(hull)-1)], color='red')]))
     
     return scenes
