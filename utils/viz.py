@@ -221,7 +221,9 @@ def plotPoints(points):
 def plotHull(points, hull):
     '''Funckja generująca graficzna reprezentacje otoczki bez wizualizacji. Przyjmuje argumenty points, oraz hull.
        hull musi byc podane zgodnie lub przeciwnie do wskazówek zegara aby wygenerewać spójny wykres.'''
-    
+       
+    print("Otoczka wypukła posiada", len(hull), "punktów.")
+
     closedHull = copy.deepcopy(hull)
     closedHull.append(closedHull[0])
 
