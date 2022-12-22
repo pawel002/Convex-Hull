@@ -27,9 +27,9 @@ points = genUniformOnSquare(10, 20, 20)
 
 # plotHull(points, hull)
 
-plot = Plot(incrementVis(points))
-plot.draw()
+# plot = Plot(incrementVis(points))
+# plot.draw()
 
 # benchmark(increment, 2, genUniformCirle, 10, 10, 10, 10000)
 # benchmark(increment, 2, genUniformRectangle, -10, 10, -10, 10, 10000)
-# benchmark(upperlower, 2, genUniformRectangle, -10, 10, -10, 10, 10000)
+benchmark(upperlower, 2, genUniformRectangle, -10, 10, -10, 10, 10000)

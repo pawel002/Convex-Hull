@@ -24,5 +24,8 @@ def benchmark(hullAlgorithm, timeOfBenchamrk, generator, *args):
     
     print("TESTS FINISHED. " + 20*"-")
     print("Executed", count, "tests.")
+    print("Algorithm used:", hullAlgorithm.__name__)
+    print("Generator used:", generator.__name__)
+    print("Sample size:", args[-1])
     print("Average time per test:", cumTime / count)
 
