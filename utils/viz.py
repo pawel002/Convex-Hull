@@ -236,3 +236,8 @@ def plotHull(points, hull):
     plt.plot(*(zip(*closedHull)), "ro-", zorder = 3)
     
     plt.show()
+
+def visHull(hullAlgorithmVis, points):
+
+    plot = Plot(hullAlgorithmVis(points))
+    plot.draw()
