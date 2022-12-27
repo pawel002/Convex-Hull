@@ -17,7 +17,5 @@ def readList(filename):
 
         return arr
     
-    return []
-    
     
     
