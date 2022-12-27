@@ -17,8 +17,13 @@ points4 = genUniformOnSquare(10, 20, 20)
 # hull = increment(points)
 # plotHull(points, hull)
 
-points = genUniformRectangle(-10, 10, -10, 10, 10)
-visHull(incrementVis, points)
+# saveList(points1, "points1")
+# points1 = readList("points1")
+# print(points1)
+# plotPoints(points1)
+
+# points = genUniformRectangle(-10, 10, -10, 10, 10)
+# visHull(incrementVis, points)
 
 # benchmark(increment, 2, genUniformCirle, 10, 10, 10, 10000)
 # benchmark(increment, 2, genUniformRectangle, -10, 10, -10, 10, 10000)

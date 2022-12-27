@@ -222,16 +222,13 @@ def plotHull(points, hull):
     '''Funckja generująca graficzna reprezentacje otoczki bez wizualizacji. Przyjmuje argumenty points, oraz hull.
        hull musi byc podane zgodnie lub przeciwnie do wskazówek zegara aby wygenerewać spójny wykres.'''
        
-    print("Otoczka wypukła posiada", len(hull), "punktów.")
+    print("Convex hull contains", len(hull), "points.")
 
     closedHull = copy.deepcopy(hull)
     closedHull.append(closedHull[0])
 
     for point in points:
         plt.scatter([point[0]], [point[1]], color="blue")
-    
-    for i, point in enumerate(hull):
-        plt.text(point[0], point[1], str(i))
 
     plt.plot(*(zip(*closedHull)), "ro-", zorder = 3)
     
