@@ -8,14 +8,13 @@ def genUniformRectangle(xStart, xEnd, yStart, yEnd, count):
     '''Generuje count punktów z prostokąta: xStart < x < xEnd i yStart < y < yEnd'''
     return [[lerp(xStart, xEnd, random()), lerp(yStart, yEnd, random())] for _  in range(count)]
 
-def genUniformCirle(x, y, radius, count):
+def genUniformCircle(x, y, radius, count):
     '''Generuje count punktów na okregu o środku w (x,y) i promieniu radius'''
     return [[x + radius*cos(angle), y + radius*sin(angle)] for angle in [2*pi*random() for _  in range(count)]]
 
 def genUniformOnRectangle(xStart, xEnd, yStart, yEnd, count):
     '''Generuje count punktów na prostokącie o lewym dolnym punkcie w lowerLeft i prawym gowrnym upperRight.'''
-    lowerLeft, upperRight = [xStart, xEnd], [yStart, yEnd]
-    ll, ur, arr = lowerLeft, upperRight, [[] for _ in range(count)]
+    ll, ur, arr = [xStart, yStart], [xEnd, yEnd], [[] for _ in range(count)]
     for i in range(count):
         s = randint(0, 3)
         t = random()
