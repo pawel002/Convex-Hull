@@ -37,7 +37,7 @@ functions = [jarvis, grahams, quickhull, upperlower, increment]
 
 for f in functions:
     for s in sizes:
-        benchmark(f, 5, genUniformOnRectangle, -10, 10, -10, 10, s)
+        benchmark(f, 5, genUniformOnSquare, 10, int(s/4), int(s/4))
 
 
 # sizes = [100000, 1000000]
