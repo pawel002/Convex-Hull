@@ -14,7 +14,8 @@ This repository contains a project written in Python made for the Geometric Algo
 ## Use
 To use algorithms implemented by us, include this line in your python file:
 ```
-from convexhulls import * ```
+from convexhulls import *
+```
 
 For more detailed description see the decumentation in Polish.
 
