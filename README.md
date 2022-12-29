@@ -18,7 +18,7 @@ Running the code requires:
 - matplotlib
 - NumPy
 
-For more detailed description see the decumentation in Polish. <\br>
+For more detailed description, see the decumentation in Polish.
 ## Authors
 - Paweł Jarosz - [pawel002](https://github.com/pawel002)
 - Mikołaj Wnęk - [miwnek](https://github.com/miwnek)
