@@ -4,6 +4,7 @@ from algorithms.increment import increment, incrementVis
 from algorithms.jarvis import jarvis, jarvisVis
 from algorithms.quickhull import quickhull, quickhullVis
 from algorithms.upperlowerhull import upperlower, upperlowerVis
+from algorithms.divideconquer import divideconquer, divideconquerVis
 
 from utils.generate import *
 from utils.viz import *
