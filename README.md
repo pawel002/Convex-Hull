@@ -14,7 +14,7 @@ To use algorithms implemented by us, include this line in your python file:
 ```
 from convexhulls import *
 ```
-Running the code requires:
+Running the code requires modules:
 - matplotlib
 - NumPy
 
