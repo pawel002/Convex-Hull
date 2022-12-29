@@ -17,6 +17,7 @@ from convexhulls import *
 Running the code requires:
 - matplotlib
 - NumPy
+
 For more detailed description see the decumentation in Polish. <\br>
 ## Authors
 - Paweł Jarosz - [pawel002](https://github.com/pawel002)
