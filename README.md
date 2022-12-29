@@ -1,7 +1,7 @@
 # Implementation and visualization of convex hull algorithms
 
 ## Description
-This repository contains a project written in Python made for the Geometric Algorithms course at AGH University in Kraków. The main objective was to implement and create a visualization for following algorithms:
+This repository contains a project written in Python, made for the Geometric Algorithms course at AGH University in Kraków. The main objective was to implement and create a visualization for following algorithms:
 
 - Jarvis'
 - Grahams'
