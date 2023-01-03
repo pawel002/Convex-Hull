@@ -1,13 +1,11 @@
 from convexhulls import *
 
-import copy
-import time
+# MIEJSCE DO TESTOWANIA FUNKCJI
 
-
-points1 = genUniformRectangle(-10, 10, -20, 30, 100)
-points2 = genUniformCircle(10, 10, 10, 100)
-points3 = genUniformOnRectangle(-10, 10, 20, 30, 100)
-points4 = genUniformOnSquare(10, 25, 25)
+# points1 = genUniformRectangle(-10, 10, -20, 30, 100)
+# points2 = genUniformCircle(10, 10, 10, 100)
+# points3 = genUniformOnRectangle(-10, 10, 20, 30, 100)
+# points4 = genUniformOnSquare(10, 25, 25)
 
 # plotPoints(points1)
 # plotPoints(points2)
@@ -29,23 +27,22 @@ points4 = genUniformOnSquare(10, 25, 25)
 # # print(points1)
 # plotPoints(points1)
 
-points = genUniformRectangle(-10, 10, -10, 10, 100)
-visHull(divideconquerVis, points1)
-
 # sizes = [100, 1000, 10000, 100000, 1000000]
-# functions = [jarvis, grahams, quickhull, upperlower, increment]
+# functions = [divideconquer]
+
+# hull = divideconquer(genUniformCircle(0, 0, 100, 100000))
 
 # for f in functions:
 #     for s in sizes:
 #         benchmark(f, 5, genUniformOnSquare, 10, int(s/4), int(s/4))
 
 
-# sizes = [100000, 1000000]
-# functions = [grahams, quickhull, upperlower, increment]
+# sizes = [100, 1000, 10000, 100000, 1000000]
+# functions = [chan]
 
 # for f in functions:
 #     for s in sizes:
-#         benchmark(f, 5, genUniformCircle, 0, 0, 10, s)
+#         benchmark(f, 5, genUniformOnSquare, 10, int(s//4), int(s//4))
 
-benchmark(grahams, 2, genUniformCircle, 10, 10, 10, 10000)
+# benchmark(increment, 2, genUniformRectangle, -10, 10, -10, 10, 1000000)
 # benchmark(increment, 2, genUniformRectangle, -10, 10, -10, 10, 10000)
